@@ -7,6 +7,9 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 const GEMINI_API_KEY = 'AIzaSyC94irT8ejOFMs1Tp4LWtDejY54LinYXLg';
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+  });
 app.post('/api/search', async (req, res) => {
   const userQuestion = req.body.query; 
   const query = `Answer the question:${userQuestion} in a way that even a illiterate (not 10 year old) can easily understand. Use simple language, provide clear examples, and avoid technical jargon or complex terms. Focus on the key points, and explain step-by-step if needed. Keep the explanation fun and engaging so it's easy to follow and remember.The Answer should be very funny.Try to give the answer in paragraph format.`;
